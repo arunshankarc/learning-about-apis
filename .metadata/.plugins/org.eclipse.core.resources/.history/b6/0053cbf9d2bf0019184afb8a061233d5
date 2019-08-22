@@ -1,0 +1,11 @@
+package intwquestions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HowMapWorks {
+	public static void main(String[] args) {
+		Map<Integer, String> hMap = new HashMap<>();
+		List<int> list = new ArrayList<>();
+	}
+}

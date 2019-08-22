@@ -1,0 +1,28 @@
+package com.pom.factory.testcases.base;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.pom.factory.util.ApplicationConstants;
+import com.pom.factory.util.ExtentManager;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
+public class BaseTest {
+	private WebDriver driver;
+	public ExtentReports extentReports = ExtentManager.getInstance();
+	public ExtentTest extentTest;
+	public WebDriver init(String browserType)	{
+		if (browserType.equals("Mozilla"))	{
+			System.out.println("Initializing Mozilla browser");
+			System.setProperty("webdriver.gecko.driver", ApplicationConstants.FIREFOXDRIVEREXE);
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "null");
+			driver = new FirefoxDriver();
+		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		return driver;
+	}
+}

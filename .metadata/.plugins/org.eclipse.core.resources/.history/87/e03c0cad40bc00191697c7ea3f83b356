@@ -1,0 +1,8 @@
+package com.pom.factory.testcases.base;
+
+public class BaseTest {
+
+	public void init(String browserType)	{
+		
+	}
+}

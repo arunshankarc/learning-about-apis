@@ -1,0 +1,43 @@
+package intwquestions;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class ArrayListFunctions {
+	public static void main(String[] args) {
+		List<String> list1 = new ArrayList<String>();
+		list1.add("Z");
+		list1.add("Z");
+		list1.add("Z");
+		list1.add("Z");
+		list1.add("A");
+		list1.add(null);
+
+		List<String> list2 = new ArrayList<String>();
+		list2.add("B");
+		list2.add("C");
+			
+		list1.addAll(list2);
+		
+		
+		list1.remove("Z");
+		// retains list2 but deletes list1 - opposite of removeAll
+		
+		//list1.retainAll(list2);
+		Iterator<String> iterator = list1.iterator();
+
+		while(iterator.hasNext())	{
+			iterator.next()
+			System.out.print(iterator.next() + " ");
+		}
+		
+		// removes list2
+		
+		list1.removeAll(list2);
+
+		for(String loop : list1){
+			System.out.println(loop + " ");
+		}
+	}
+}

@@ -1,0 +1,26 @@
+package com.pom.factory.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.session.LandingPage;
+
+public class LoginPage {
+	WebDriver driver;
+	@FindBy(xpath="//input[@id='email']")
+	private WebElement email;
+	@FindBy(xpath="//input[@id='pass']")
+	private WebElement password;
+	
+	public LoginPage(WebDriver driver)	{
+		this.driver = driver;
+	}
+	
+	public LandingPage performLogin(String userName, String password)	{
+		email.sendKeys(userName);
+		this.password.sendKeys("");
+		return PageFactory.initElements(driver, LandingPage.class);
+	}
+}

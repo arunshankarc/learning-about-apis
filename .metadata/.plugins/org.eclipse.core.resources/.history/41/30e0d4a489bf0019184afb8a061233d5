@@ -1,0 +1,27 @@
+package intwquestions;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class HowSetWorks {
+	public static void main(String[] args) {
+		LinkedHashSet<String> hSet = new HashSet<>();
+		hSet.add("Arun");
+		hSet.add("is");
+		hSet.add("good");
+		hSet.add("boy");
+		hSet.add(null);
+		hSet.add(null);
+		hSet.add(null);
+		hSet.add(null);
+		Iterator<String> iter = hSet.iterator();
+		for(String str : hSet)	{
+			System.out.println(str);
+		}
+		while(iter.hasNext())	{
+			System.out.println(iter.next());
+		}
+	}
+
+}

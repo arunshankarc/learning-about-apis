@@ -1,0 +1,10 @@
+package com.pom.factory.pages;
+
+import org.openqa.selenium.WebDriver;
+
+public class LaunchPage {
+
+	public LaunchPage(WebDriver driver)	{
+		driver.get("http://google.com");
+	}
+}

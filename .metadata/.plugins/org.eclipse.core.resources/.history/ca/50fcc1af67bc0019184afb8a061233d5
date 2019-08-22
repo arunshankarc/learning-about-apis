@@ -1,0 +1,28 @@
+package com.pom.factory.session;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.base.BasePage;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class LandingPage extends BasePage{
+	@FindBy(xpath="//span[@class='_1vp5']")
+	private WebElement profilePage;
+	
+	public LandingPage(WebDriver driver, ExtentTest extentTest)	{
+		super(driver, extentTest);
+	}
+	
+	public ProfilePage gotoProfilePage()	{
+		extentTest.log(LogStatus.INFO, "Clicking on to profile page");
+		profilePage.click();
+		extentTest.log(LogStatus.INFO, "Successfully Clicked on to profile page");
+		ProfilePage profilePage = new ProfilePage(driver, extentTest);
+		PageFactory.initElements(driver, ProfilePage.class);
+		return profilePage;
+	}
+}

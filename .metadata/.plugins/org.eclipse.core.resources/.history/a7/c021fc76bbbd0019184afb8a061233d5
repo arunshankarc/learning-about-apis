@@ -1,0 +1,9 @@
+package intwquestions;
+
+public class MainClass{
+	public static void main(String[] args)	{
+		ParentClass childClass = new ChildClass();
+		childClass.audioSystem();
+		System.out.println(childClass.i);
+	}
+}

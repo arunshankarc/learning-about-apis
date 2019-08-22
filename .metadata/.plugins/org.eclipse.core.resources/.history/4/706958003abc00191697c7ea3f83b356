@@ -1,0 +1,29 @@
+package com.pom.factory.testcases;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.pom.factory.pages.LaunchPage;
+import com.pom.factory.pages.LoginPage;
+import com.pom.factory.session.LandingPage;
+import com.pom.factory.session.ProfilePage;
+
+public class ProfileTest {
+	@Test
+	public void testProfile()	{
+		System.setProperty("webdriver.gecko.driver", "D:\\Selenium Drivers\\geckodriver.exe");
+		System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "null");
+		WebDriver driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		LaunchPage launchPage = PageFactory.initElements(driver, LaunchPage.class);
+		LoginPage loginPage = launchPage.gotoLoginPage();
+		LandingPage landingPage = loginPage.performLogin("xxxx", "yyyyy");
+		ProfilePage profilePage = landingPage.gotoProfilePage();
+
+	}
+
+}

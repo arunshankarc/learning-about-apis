@@ -1,0 +1,5 @@
+package intwquestions;
+
+public abstract class EstablishConnectivity {
+
+}

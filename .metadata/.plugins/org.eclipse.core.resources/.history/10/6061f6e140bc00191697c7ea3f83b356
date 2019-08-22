@@ -1,0 +1,16 @@
+package com.pom.factory.testcases.base;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class BaseTest {
+	private WebDriver driver;
+	public void init(String browserType)	{
+		if (browserType.equals("Mozilla"))	{
+			System.setProperty("webdriver.gecko.driver", "D:\\Selenium Drivers\\geckodriver.exe");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "null");
+			driver = new FirefoxDriver();
+		}
+		return driver;
+	}
+}

@@ -1,0 +1,9 @@
+package com.pom.factory.base;
+
+public class BasePage {
+	
+	public String verifyTitle(String input)	{
+		return "";
+	}
+	
+}

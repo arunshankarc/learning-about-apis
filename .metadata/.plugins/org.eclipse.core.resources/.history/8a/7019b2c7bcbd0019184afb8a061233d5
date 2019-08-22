@@ -1,0 +1,19 @@
+package intwquestions;
+
+class ParentClass {
+	int max_speed = 90;
+	public void disp_speed() {
+		System.out.println("Inside bike");
+	}
+}
+
+class ChildClass extends ParentClass{
+	int i = 20;
+	String s = new String("Shankar");
+	@Override
+	public void audioSystem() {
+		System.out.println("child system");
+	}
+}
+
+

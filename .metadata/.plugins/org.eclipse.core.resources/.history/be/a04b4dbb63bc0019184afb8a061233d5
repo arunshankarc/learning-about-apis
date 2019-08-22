@@ -1,0 +1,26 @@
+package com.pom.factory.testcases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.pom.factory.pages.LaunchPage;
+import com.pom.factory.pages.LoginPage;
+import com.pom.factory.testcases.base.BaseTest;
+import com.pom.factory.util.ExtentManager;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class ChangePasswordTest extends BaseTest{
+	@Test
+	public void doLogin()	{
+		ExtentReports extentReports = ExtentManager.getInstance();
+		ExtentTest extentTest = extentReports.startTest("LoginTest");
+		extentTest.log(LogStatus.INFO, "Starting change password Test");
+
+		extentTest.log(LogStatus.PASS, "End change password Test");
+		extentReports.endTest(extentTest);
+		extentReports.flush();
+	}
+}

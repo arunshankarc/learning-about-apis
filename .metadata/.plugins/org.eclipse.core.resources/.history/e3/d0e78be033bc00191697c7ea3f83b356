@@ -1,0 +1,8 @@
+package com.pom.factory.pages;
+
+public class LaunchPage {
+
+	public LaunchPage(WebDriver driver)	{
+		
+	}
+}

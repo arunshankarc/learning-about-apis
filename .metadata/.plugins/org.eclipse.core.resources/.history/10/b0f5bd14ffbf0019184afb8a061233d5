@@ -1,0 +1,8 @@
+package intwquestions;
+
+public class TestReflections {
+	public static void main(String[] args)	{
+		Test obj = new Test(); 
+
+	}
+}

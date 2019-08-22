@@ -1,0 +1,54 @@
+package com.pom.factory.testcases;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.SkipException;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.pom.factory.pages.LaunchPage;
+import com.pom.factory.pages.LoginPage;
+import com.pom.factory.testcases.base.BaseTest;
+import com.pom.factory.util.DataUtil;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class LoginTest extends BaseTest{
+	@Test(dataProvider="getData")
+	public void doLogin(HashMap<String, String> data)	{
+		extentTest = extentReports.startTest("LoginTest");
+		if(!DataUtil.isTestExecutable(xlsReader, testCaseName) ||  data.get(FBConstants.RUNMODE_COL).equals("N")){
+			test.log(LogStatus.SKIP, "Skipping the test as Rnumode is N");
+			throw new SkipException("Skipping the test as Rnumode is N");
+		}
+		extentTest.log(LogStatus.INFO, "Starting Login Test");
+		WebDriver driver = init(data.get("Browser"));
+		Map<String, String> resultMap = new HashMap<String, String>();
+		LaunchPage launchPage = new LaunchPage(driver, extentTest, resultMap);
+		PageFactory.initElements(driver, launchPage);
+		LoginPage loginPage = launchPage.gotoLoginPage();
+		loginPage.verifyTitle("");
+		Object landLoginPage = loginPage.performLogin(data.get("Username"), data.get("Password"));
+		extentTest.log(LogStatus.INFO, "Ending Login Test");
+		extentTest.log(LogStatus.PASS, "Login Test passed");
+	}
+	
+
+	@AfterMethod
+	public void quit()	{
+		if (extentReports != null) {
+			extentReports.endTest(extentTest);
+			extentReports.flush();
+		}
+
+	}
+	
+	@DataProvider
+	public Object[][] getData()	{	
+		return DataUtil.getData("LoginTest", xlsReader);
+	}
+
+}

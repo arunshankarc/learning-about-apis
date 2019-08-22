@@ -1,0 +1,12 @@
+package intwquestions;
+
+public class StringLearning {
+	public static void main(String[] args) {
+		
+		String str = "Arun is a good boy";
+		String strNew = new String("Arun is a bad boy");
+		str.replace("good", "bad");
+		System.out.println("");
+		strNew.replace("good", "bad");
+	}
+}

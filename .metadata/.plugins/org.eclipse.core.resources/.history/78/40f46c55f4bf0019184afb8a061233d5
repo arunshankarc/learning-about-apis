@@ -1,0 +1,9 @@
+package intwquestions;
+
+public class LearnHashTable {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

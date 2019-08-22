@@ -1,0 +1,35 @@
+package com.pom.factory.base;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.pages.common.TopMenu;
+import com.relevantcodes.extentreports.ExtentTest;
+
+public class BasePage {
+	public WebDriver driver;
+	public TopMenu menu;
+	public ExtentTest extentTest;
+	public BasePage()	{}
+	
+	public BasePage(WebDriver driver, ExtentTest extentTest)	{
+		this.driver = driver;
+		menu = PageFactory.initElements(driver, TopMenu.class);
+	}
+	
+	public String verifyTitle(String title)	{
+		return "";
+	}
+	
+	public String verifyText(String locator, String expectedText)	{
+		return "";
+	}
+	
+	public boolean isElementPresent(String locator)	{
+		return false;
+	}
+	
+	public TopMenu getMenu()	{
+		return menu;
+	}
+}

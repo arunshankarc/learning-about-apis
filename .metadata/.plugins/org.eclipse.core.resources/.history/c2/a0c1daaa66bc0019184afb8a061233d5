@@ -1,0 +1,38 @@
+package com.pom.factory.pages;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.base.BasePage;
+import com.pom.factory.session.LandingPage;
+import com.relevantcodes.extentreports.ExtentTest;
+
+public class LoginPage extends BasePage {
+	@FindBy(xpath="//input[@id='email']")
+	private WebElement email;
+	@FindBy(xpath="//input[@id='pass']")
+	private WebElement password;
+	
+	public LoginPage(WebDriver driver, ExtentTest extentTest)	{
+		super(driver, extentTest);
+	}
+	
+	public Object performLogin(String userName, String password)	{
+		email.sendKeys(userName);
+		this.password.sendKeys(password);
+		this.password.sendKeys(Keys.ENTER);
+		boolean isSuccess = true;
+		if(isSuccess)	{
+			LandingPage landingPage = new LandingPage(driver, extentTest);
+			PageFactory.initElements(driver, LandingPage.class);
+			return landingPage;
+		}
+		else	{
+			LoginPage loginPage = new LoginPage(LoginPage);
+			return PageFactory.initElements(driver, LoginPage.class);
+		}
+	}
+}

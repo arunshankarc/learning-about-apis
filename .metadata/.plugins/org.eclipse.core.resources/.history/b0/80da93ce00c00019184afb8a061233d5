@@ -1,0 +1,8 @@
+package intwquestions;
+
+public class LearnEnums {
+
+	enum Day	{
+		
+	}
+}

@@ -1,0 +1,15 @@
+package com.pom.factory;
+
+public class ReadingData {
+	public static void main(String[] args)	{
+		Xls_Reader xls_Reader = new Xls_Reader(System.getProperty("user.dir") + "\\Data.xlsx");
+		String testCaseName = "LoginTest";
+		int testStartRowNum = 1;
+		while(!xls_Reader.getCellData("TestData", 0, testStartRowNum).equals(testCaseName))	{
+			
+			testStartRowNum++;
+		}
+		System.out.println("Test starts from row num - " + testStartRowNum);
+	
+	}
+}

@@ -1,0 +1,36 @@
+package com.restapi.automation.google;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.given;
+
+
+public class GoogleApiModule1 {
+    @Test
+    public void Test()  {
+    	// https://jsoneditoronline.org/
+        RestAssured.baseURI = "https://maps.googleapis.com";
+        Response response = given().
+                param("location", "-33.8670522,151.1957362").
+                param("radius", "1500").
+                param("type","restaurant").
+                param("keyword", "cruise").
+                param("key", "AIzaSyD2Jbx4j6FZS_afCk0KWmUMKNf6nmawegs").log().all().
+                when().
+                get("maps/api/place/nearbysearch/json").
+                then().assertThat().statusCode(200).and().contentType(ContentType.JSON).log().body().and().
+                body("results[0].name", equalTo("Cruise Bar")).
+        extract().response();
+        String resString = response.asString();
+        JsonPath jsonPath = new JsonPath(resString);
+        int countArray = jsonPath.get("results.size()");
+        System.out.println(countArray);
+        for(int index=0; index<countArray;index++)   {
+            System.out.println((String) jsonPath.get("results["+ index + "].name"));
+        }
+    }
+}

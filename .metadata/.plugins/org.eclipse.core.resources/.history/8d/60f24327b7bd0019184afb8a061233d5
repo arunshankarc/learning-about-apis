@@ -1,0 +1,17 @@
+package intwquestions;
+
+public class inheritance {
+	public static void main(String[] args)	{
+		
+	}
+}
+
+class A{
+	int i = 10;
+}
+
+class b extends A{
+	int i = 20;
+}
+
+

@@ -1,0 +1,9 @@
+package com.pom.factory;
+
+public class TestA {
+
+	@Test
+	public void TestA() {
+
+	}
+}

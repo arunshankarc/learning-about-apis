@@ -1,0 +1,9 @@
+package intwquestions;
+
+public class StringLearning {
+	public static void main(String[] args) {
+		
+		String str = "";
+		String strNew = new String("");
+	}
+}

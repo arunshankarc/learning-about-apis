@@ -1,0 +1,17 @@
+package com.pom.factory.testcases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.pom.factory.pages.LaunchPage;
+
+public class ProfileTest {
+	@Test
+	public void testProfile()	{
+		WebDriver driver = new FirefoxDriver();
+		PageFactory.initElements(driver, LaunchPage.class);
+	}
+
+}

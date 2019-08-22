@@ -1,0 +1,9 @@
+package intwquestions;
+
+public class StringLearning {
+	public static void main(String[] args) {
+		
+		String str = "Arun is a good boy";
+		String strNew = new String("");
+	}
+}

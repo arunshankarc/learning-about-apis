@@ -1,0 +1,10 @@
+package com.selenium.automation.browseroptions;
+
+import org.testng.annotations.Test;
+
+public class ClearTrip {
+    @Test
+    public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
+    	
+    }
+}

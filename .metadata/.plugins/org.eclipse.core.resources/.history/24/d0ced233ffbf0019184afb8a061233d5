@@ -1,0 +1,13 @@
+package intwquestions;
+
+public class TestReflections {
+	public static void main(String[] args)	{
+		Test obj = new Test(); 
+        // Creating class object from the object using 
+        // getclass method 
+        Class cls = obj.getClass(); 
+        System.out.println("The name of class is " + 
+                            cls.getName());
+        
+	}
+}

@@ -1,0 +1,17 @@
+package intwquestions;
+
+public class StringLearning {
+	public static void main(String[] args) {
+		
+		String str = "Arun is a good boy";
+		String strNew = new String("Arun is a bad boy");
+		System.out.println(str.hashCode());
+		System.out.println(strNew.hashCode());
+		String strOld1 = str.replace("good", "bad");
+		System.out.println(str);
+		String strOld2 = strNew.replace("good", "bad");
+		System.out.println(strNew);
+		System.out.println(str.hashCode());
+		System.out.println(strNew.hashCode());
+	}
+}

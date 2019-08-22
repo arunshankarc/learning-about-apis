@@ -1,0 +1,9 @@
+package com.pom.factory.pages.common;
+
+import org.openqa.selenium.WebDriver;
+
+public class TopMenu {
+	public TopMenu(WebDriver driver)	{
+		super(driver);
+	}
+}

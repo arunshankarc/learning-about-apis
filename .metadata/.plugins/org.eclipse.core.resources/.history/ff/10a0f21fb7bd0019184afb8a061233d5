@@ -1,0 +1,15 @@
+package intwquestions;
+
+public class inheritance {
+	int i = 10;
+}
+
+class A{
+	int i = 10;
+}
+
+class b extends A{
+	int i = 20;
+}
+
+

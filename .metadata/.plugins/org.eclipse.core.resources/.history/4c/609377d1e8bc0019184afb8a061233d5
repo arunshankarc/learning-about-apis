@@ -1,0 +1,7 @@
+package com.pom.factory;
+
+public class ReadingData {
+	public static void main()	{
+		
+	}
+}

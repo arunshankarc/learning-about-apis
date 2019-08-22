@@ -1,0 +1,10 @@
+package com.pom.factory;
+
+public class ReadingData {
+	public static void main(String[] args)	{
+		System.out.println(System.getProperty("user.dir"));
+		Xls_Reader xls_Reader = new Xls_Reader(System.getProperty("user.dir") + "\\Data.xlsx");
+		int rows = xls_Reader.getColumnCount("Login");
+		System.out.println(rows);
+	}
+}

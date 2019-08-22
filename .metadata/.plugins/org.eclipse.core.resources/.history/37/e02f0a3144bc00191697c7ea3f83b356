@@ -1,0 +1,8 @@
+package com.pom.factory.testcases;
+
+import com.pom.factory.testcases.base.BaseTest;
+
+public class LoginTest extends BaseTest{
+	@Test
+
+}

@@ -1,0 +1,9 @@
+package com.pom.factory.testcases;
+
+public class ProfileTest {
+	@Test
+	public void testProfile()	{
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.pom.factory.util;
+
+public class ApplicationConstants {
+	
+	public static final String FIREFOXDRIVEREXE = "";
+
+}

@@ -1,0 +1,22 @@
+package intwquestions;
+
+class ParentClass {
+
+	public void audioSystem() {
+		System.out.println("parent system");
+	}
+}
+
+class ChildClass extends ParentClass{
+
+	public void audioSystem() {
+		System.out.println("child system");
+	}
+}
+
+class MainClass{
+	public static void main(String[] args)	{
+		ChildClass childClass = new ChildClass();
+		childClass.audioSystem();
+	}
+}

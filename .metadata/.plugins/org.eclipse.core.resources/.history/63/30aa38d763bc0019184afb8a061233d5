@@ -1,0 +1,19 @@
+package com.pom.factory.testcases;
+
+import org.testng.annotations.Test;
+
+import com.pom.factory.testcases.base.BaseTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class ChangePasswordTest extends BaseTest{
+	@Test
+	public void doLogin()	{
+		
+		extentTest = extentReports.startTest("LoginTest");
+		extentTest.log(LogStatus.INFO, "Starting change password Test");
+
+		extentTest.log(LogStatus.PASS, "End change password Test");
+		extentReports.endTest(extentTest);
+		extentReports.flush();
+	}
+}

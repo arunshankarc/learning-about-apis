@@ -1,0 +1,13 @@
+package intwquestions;
+
+public class LearnFinalizeMethod {
+
+	public static void main(String[] args) {
+		LearnFinalizeMethod method = new LearnFinalizeMethod();
+		method = null;
+		System.gc();
+	}
+	
+	
+
+}

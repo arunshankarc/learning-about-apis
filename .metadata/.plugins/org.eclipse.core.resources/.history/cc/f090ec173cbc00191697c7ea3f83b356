@@ -1,0 +1,16 @@
+package com.pom.factory.base;
+
+public class BasePage {
+	
+	public String verifyTitle(String title)	{
+		return "";
+	}
+	
+	public String verifyText(String locator, String expectedText)	{
+		return "";
+	}
+	
+	public void isElementPresent(String locator)	{
+		return "";
+	}
+}

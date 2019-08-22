@@ -1,0 +1,15 @@
+package intwquestions;
+
+class ParentClass {
+
+	public void audioSystem() {
+		System.out.println("parent system");
+	}
+}
+
+class ChildClass {
+
+	public void audioSystem() {
+		System.out.println("child system");
+	}
+}

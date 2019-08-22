@@ -1,0 +1,15 @@
+package intwquestions;
+
+public class WrappingandUnwrapping {
+
+	public static void main(String[] args) {
+		
+		// Wrapping or autoboxing
+		// autoboxing is automatic wrapping by compiler
+		float fl = 18.6f; 
+		Float fl1 = new Float(fl);
+		Float fl2 = fl;
+		System.out.println(fl1);
+	}
+
+}

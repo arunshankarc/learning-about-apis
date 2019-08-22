@@ -1,0 +1,19 @@
+package com.pom.factory.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.base.BasePage;
+import com.relevantcodes.extentreports.ExtentTest;
+
+public class LaunchPage extends BasePage {
+	public LaunchPage(WebDriver driver, ExtentTest extentTest)	{
+		super(driver);
+	}
+	
+	public LoginPage gotoLoginPage()	{
+		System.out.println("Login page");
+		driver.get("https://facebook.com");
+		return PageFactory.initElements(driver, LoginPage.class);
+	}
+}

@@ -1,0 +1,44 @@
+package com.pom.factory.base;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.pages.common.TopMenu;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class BasePage {
+	public WebDriver driver;
+	public TopMenu menu;
+	public ExtentTest extentTest;
+	public BasePage()	{}
+	
+	public BasePage(WebDriver driver, ExtentTest extentTest)	{
+		this.driver = driver;
+		this.extentTest = extentTest;
+		menu = new TopMenu(driver, extentTest);
+		menu = PageFactory.initElements(driver, TopMenu.class);
+	}
+	
+	public String verifyTitle(String expTitle)	{
+		extentTest.log(LogStatus.INFO, "Starting verify title");
+		extentTest.log(LogStatus.INFO, "Completed verify title");
+		return "";
+	}
+	
+	public String verifyText(String locator, String expectedText)	{
+		return "";
+	}
+	
+	public boolean isElementPresent(String locator)	{
+		return false;
+	}
+	
+	public TopMenu getMenu()	{
+		return menu;
+	}
+	
+	public void takeScreenshot()	{
+		
+	}
+}

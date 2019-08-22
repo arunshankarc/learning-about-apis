@@ -1,0 +1,10 @@
+package intwquestions;
+
+import java.util.HashSet;
+
+public class HowSetWorks {
+	public static void main(String[] args) {
+		Set<String> hSet = new HashSet<>();
+	}
+
+}

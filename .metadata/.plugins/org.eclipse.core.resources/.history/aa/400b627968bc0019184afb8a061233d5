@@ -1,0 +1,25 @@
+package com.pom.factory.pages.common;
+
+import org.openqa.selenium.WebDriver;
+
+import com.pom.factory.base.BasePage;
+import com.relevantcodes.extentreports.ExtentTest;
+
+public class TopMenu extends BasePage	{
+	WebDriver driver;
+	public TopMenu(WebDriver driver, ExtentTest extentTest)	{
+		this.driver=driver;
+	}
+	
+	public void logOut()	{
+		
+	}
+	
+	public void settings()	{
+	
+	}
+	
+	public void search()	{
+		
+	}
+}

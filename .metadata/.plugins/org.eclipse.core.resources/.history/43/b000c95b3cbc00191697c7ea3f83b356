@@ -1,0 +1,14 @@
+package com.pom.factory.session;
+
+import org.openqa.selenium.WebDriver;
+
+import com.pom.factory.base.BasePage;
+
+public class ProfilePage extends BasePage{
+	
+	WebDriver driver;
+	
+	public ProfilePage(WebDriver driver)	{
+		this.driver = driver;
+	}
+}

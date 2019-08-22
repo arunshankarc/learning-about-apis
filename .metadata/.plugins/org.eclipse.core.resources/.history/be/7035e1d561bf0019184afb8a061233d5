@@ -1,0 +1,19 @@
+package intwquestions;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListFunctions {
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<String>();
+		list.add("Z");
+		list.add("Z");
+		list.add("Z");
+		list.add("Z");
+		list.add("A");
+		list.add(null);
+		
+		List<String> list2 = new ArrayList<String>();
+		
+	}
+}

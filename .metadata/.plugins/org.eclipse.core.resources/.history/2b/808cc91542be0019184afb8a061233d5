@@ -1,0 +1,43 @@
+package intwquestions;
+
+public class StringLearning {
+	public static void main(String[] args) {
+
+		String str = "Arun is a good boy";
+		String strNew = new String("Arun is a bad boy");
+
+
+		System.out.println(str.hashCode());
+		System.out.println(strNew.hashCode());
+
+
+
+		str = str.replace("good", "best");
+		System.out.println(str);
+		strNew = strNew.replace("bad", "worst");
+		System.out.println(strNew);
+
+
+
+		System.out.println(str.hashCode());
+		System.out.println(strNew.hashCode());
+
+		StringBuffer sb = new StringBuffer("Test");
+		System.out.println(sb);
+		System.out.println(sb.hashCode());
+
+
+		sb.append(" again");
+		System.out.println(sb);
+		System.out.println(sb.hashCode());
+
+		// Lets check out the performance
+
+		String strPerformance = "test";
+		for(int i=0; i<=100_000_000;i++) {
+			strPerformance = strPerformance.concat("");
+		}
+		
+		StringBuffer sb = new StringBuffer("Test");
+	}
+}

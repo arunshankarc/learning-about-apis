@@ -1,0 +1,14 @@
+package com.pom.factory.session;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class ProfilePage {
+	private WebElement profilePage;
+	
+	WebDriver driver;
+	
+	public LandingPage(WebDriver driver)	{
+		this.driver = driver;
+	}
+}

@@ -1,0 +1,28 @@
+package com.pom.factory.pages;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.base.BasePage;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class LaunchPage extends BasePage {
+	private Map<String, String> resultMap = new HashMap<String, String>();;
+	public LaunchPage(WebDriver driver, ExtentTest extentTest, HashMap<String, String> resultMap)	{
+		super(driver, extentTest);
+		this.resultMap = resultMap;
+	}
+	
+	public LoginPage gotoLoginPage()	{
+		extentTest.log(LogStatus.INFO, "Invoke the URL for facebook");
+		driver.get("https://facebook.com");
+		extentTest.log(LogStatus.INFO, "Successfully Invoked the URL for facebook");
+		LoginPage loginPage = new LoginPage(driver, extentTest);
+		PageFactory.initElements(driver, loginPage);
+		return loginPage;
+	}
+}

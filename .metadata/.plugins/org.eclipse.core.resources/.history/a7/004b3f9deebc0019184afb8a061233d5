@@ -1,0 +1,8 @@
+package com.pom.factory;
+
+public class ReadingData {
+	public static void main(String[] args)	{
+		String testCaseName = "LoginTest";
+		int test
+	}
+}

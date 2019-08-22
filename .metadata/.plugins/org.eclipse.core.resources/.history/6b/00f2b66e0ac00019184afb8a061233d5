@@ -1,0 +1,9 @@
+package intwquestions;
+
+public class Differencebetweeninstanceofandisinstance {
+	public static void main(String[] args) {
+		Integer i = new Integer(5);
+		System.out.println(i.isInstanceOf());
+	}
+
+}

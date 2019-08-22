@@ -1,0 +1,19 @@
+package com.pom.factory.session;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class LandingPage {
+	@FindBy(xpath="//span[@class='_1vp5']")
+	private WebElement profilePage;
+	WebDriver driver;
+	
+	public LandingPage(WebDriver driver)	{
+		this.driver = driver;
+	}
+	
+	public void gotoProfilePage()	{
+		profilePage.click();
+	}
+}

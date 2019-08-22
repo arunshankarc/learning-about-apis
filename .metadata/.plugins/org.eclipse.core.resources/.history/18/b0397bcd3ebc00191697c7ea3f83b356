@@ -1,0 +1,17 @@
+package com.pom.factory.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.base.BasePage;
+
+public class LaunchPage extends BasePage {
+	public LaunchPage(WebDriver driver)	{
+		this.driver = driver;
+	}
+	
+	public LoginPage gotoLoginPage()	{
+		driver.get("https://facebook.com");
+		return PageFactory.initElements(driver, LoginPage.class);
+	}
+}

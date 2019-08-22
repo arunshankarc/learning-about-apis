@@ -1,0 +1,15 @@
+package intwquestions;
+
+public class Differencebetweeninstanceofandisinstance {
+	public static void main(String[] args) {
+		Integer i = new Integer(5);
+		System.out.println(i instanceof Integer);
+		returnInstance(i, "java.lang.Integer");
+		
+	}
+	
+	public boolean returnInstance(Object o, String str) throws ClassNotFoundException	{
+		return Class.forName(str).isInstance(o);
+	}
+
+}

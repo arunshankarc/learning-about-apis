@@ -1,0 +1,66 @@
+package com.pom.factory.util;
+
+import java.util.HashMap;
+
+public class DataUtil {
+	public static Object[][] getData(String testCaseName, Xls_Reader xlsReader)	{
+		int testStartRowNum = 1;
+		while(!xlsReader.getCellData("TestData", 0, testStartRowNum).equals(testCaseName))	{
+			testStartRowNum++;
+		}
+		System.out.println("Test starts from row num - " + testStartRowNum);
+		int testColumnsStartRowNum = testStartRowNum + 1;
+		int testDataStartRowNum = testStartRowNum + 2;
+		
+		// calculate rows of data
+		int rows = 0;
+		
+		while(!xlsReader.getCellData("TestData", 0, testDataStartRowNum+rows).equals(""))	{
+			rows++;
+		}
+		System.out.println("Total rows for the test " + rows);
+		
+		// calculate total columns for data
+		int cols = 0;
+		
+		while(!xlsReader.getCellData("TestData", cols, testColumnsStartRowNum).equals(""))	{
+			cols++;
+		}
+		System.out.println("Total cols for the test " + cols);
+		
+		Object[][] data = new Object[rows][1];
+		HashMap<String, String> map = null;
+		// Read the data
+		int dataRowNumber = 0;
+		for (int rNum=testDataStartRowNum;rNum<testDataStartRowNum+rows;rNum++)	{
+			map = new HashMap<String, String>();
+			for(int cNum=0;cNum<cols;cNum++)	{
+				System.out.println(xlsReader.getCellData("TestData", cNum, rNum));
+				//data[dataRowNumber][cNum] = xlsReader.getCellData("TestData", cNum, rNum);
+				String key = xlsReader.getCellData("TestData", cNum, testColumnsStartRowNum);
+				String value = xlsReader.getCellData("TestData", cNum, rNum);
+				map.put(key, value);
+				System.out.println(key + " --- " + value);
+			}
+			data[dataRowNumber][0] = map;
+			dataRowNumber++;
+		}
+		return data;
+	}
+	
+	public static boolean isTestExecutable(Xls_Reader xls, String testCaseName){
+		int rows = xls.getRowCount("");
+		for(int rNum=2;rNum<=rows;rNum++){
+			String tcid = xls.getCellData("", "TCID", rNum);
+			if(tcid.equals(testCaseName)){
+				String runmode = xls.getCellData("", "Runmode", rNum);
+				if(runmode.equals("Y"))
+					return true;
+				else
+					return false;
+
+			}
+		}
+		return false;
+	}
+}

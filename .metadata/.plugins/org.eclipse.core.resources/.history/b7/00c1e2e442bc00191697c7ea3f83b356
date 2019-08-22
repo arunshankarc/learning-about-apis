@@ -1,0 +1,5 @@
+package com.pom.factory.util;
+
+public class ApplicationConstants {
+
+}

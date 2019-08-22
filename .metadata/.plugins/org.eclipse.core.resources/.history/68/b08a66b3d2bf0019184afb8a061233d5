@@ -1,0 +1,7 @@
+package intwquestions;
+
+public class HowMapWorks {
+	public static void main(String[] args) {
+		Map<int, String> hMap = new HashMap<>();
+	}
+}

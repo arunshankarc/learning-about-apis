@@ -1,0 +1,15 @@
+package com.pom.factory.pages.common;
+
+import org.openqa.selenium.WebDriver;
+
+import com.pom.factory.base.BasePage;
+
+public class TopMenu extends BasePage{
+	public TopMenu(WebDriver driver)	{
+		super(driver);
+	}
+	
+	public void logOut()	{
+		
+	}
+}

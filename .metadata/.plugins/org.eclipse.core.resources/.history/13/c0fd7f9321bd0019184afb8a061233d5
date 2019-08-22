@@ -1,0 +1,8 @@
+package com.pom.factory.util;
+
+public class DataUtil {
+	public static Object[][] getData(String testCaseName, )	{
+		
+	}
+
+}

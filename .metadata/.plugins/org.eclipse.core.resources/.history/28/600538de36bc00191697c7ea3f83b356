@@ -1,0 +1,18 @@
+package com.pom.factory.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pom.factory.session.LandingPage;
+
+public class LoginPage {
+	WebDriver driver;
+	public LoginPage(WebDriver driver)	{
+		this.driver = driver;
+	}
+	
+	public LandingPage performLogin(String userName, String password)	{
+		
+
+	}
+}

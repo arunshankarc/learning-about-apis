@@ -1,0 +1,39 @@
+package intwquestions;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+public class TestReflections {
+	public static void main(String[] args) throws NoSuchMethodException, SecurityException	{
+		Test obj = new Test(); 
+		// Creating class object from the object using 
+		// getclass method 
+		Class cls = obj.getClass(); 
+		System.out.println("The name of class is " + 
+				cls.getName());
+		// Getting the constructor of the class through the 
+		// object of the class 
+		Constructor constructor = cls.getConstructor(); 
+		System.out.println("The name of constructor is " + 
+				constructor.getName()); 
+
+		System.out.println("The public methods of class are : "); 
+
+		// Getting methods of the class through the object 
+		// of the class by using getMethods 
+		Method[] methods = cls.getMethods(); 
+
+		// Printing method names 
+		for (Method method:methods) 
+			System.out.println(method.getName()); 
+		
+	       // creates object of desired method by providing the 
+        // method name and parameter class as arguments to 
+        // the getDeclaredMethod 
+        Method methodcall1 = cls.getDeclaredMethod("method2", 
+                                                 int.class); 
+  
+        // invokes the method at runtime 
+        methodcall1.invoke(obj, 19); 
+	}
+}

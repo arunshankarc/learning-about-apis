@@ -1,0 +1,17 @@
+package intwquestions;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+public class TestReflections {
+	public static void main(String[] args) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException	{
+		Test test = new Test();
+		Class<? extends Test> classVar = test.getClass();
+
+		Method[] methods = classVar.getMethods();
+		for(Method m : methods) {
+			System.out.println(m.getName());
+		}
+	}
+}

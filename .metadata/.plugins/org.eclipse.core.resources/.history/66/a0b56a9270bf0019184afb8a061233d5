@@ -1,0 +1,12 @@
+package intwquestions;
+
+import java.util.Arrays;
+
+public class ArraysToArrayList {
+
+	public static void main(String[] args) {
+		String[] arr = {"Arun", "shankar", "C"};
+		List<String> list = new ArrayList<String>(); Arrays.asList(arr);
+	}
+
+}

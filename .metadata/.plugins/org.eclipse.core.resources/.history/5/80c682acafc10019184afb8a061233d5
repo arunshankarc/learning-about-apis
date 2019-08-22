@@ -1,0 +1,17 @@
+package intwquestions;
+
+public class MssqlConnection extends EstablishConnectivity{
+
+	@Override
+	public void commitTransaction() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void rollBackTransaction() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

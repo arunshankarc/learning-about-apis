@@ -1,0 +1,17 @@
+package intwquestions;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
+public class LearnLinkedLists {
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<>();
+		list.add("Arun");
+		list.add("shankar");
+		ListIterator<String> iter= list.listIterator();
+		while(iter.hasPrevious())	{
+			System.out.println(iter.previous());
+		}
+	}
+}
